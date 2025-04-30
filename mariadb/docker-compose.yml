@@ -1,3 +1,4 @@
+# 마리아DB
 services:
   mariadb:
     image: mariadb:11.7
@@ -10,7 +11,8 @@ services:
       - MARIADB_USER=maria  # 기본 사용자 이름
       - MARIADB_PASSWORD=maria  # 사용자 비밀번호
     volumes:
-      - /Users/seowon/dev/docker/mariadb/dataset:/var/lib/mysql  # 데이터 저장 경로
+#      - /Users/seowon/dev/docker/mariadb/dataset:/var/lib/mysql  # M:데이터 저장 경로
+      - /c/dev/docker/mariadb/dataset:/var/lib/mysql  # W:데이터 저장 경로
     ports:
       - "3306:3306"
     command:
