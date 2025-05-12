@@ -7,9 +7,9 @@ services:
     environment:
       - MARIADB_ROOT_PASSWORD=""  # 비밀번호를 설정하지 않으려면 빈 문자열로 설정
       - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=yes  # 비밀번호 없이 root 접속 허용
-      - MARIADB_DATABASE=maria  # 기본 데이터베이스 이름
-      - MARIADB_USER=maria  # 기본 사용자 이름
-      - MARIADB_PASSWORD=maria  # 사용자 비밀번호
+      - MARIADB_DATABASE=dbname  # 기본 데이터베이스 이름
+      - MARIADB_USER=dbuser  # 기본 사용자 이름
+      - MARIADB_PASSWORD=dbpassword  # 사용자 비밀번호
     volumes:
 #      - /Users/seowon/dev/docker/mariadb/dataset:/var/lib/mysql  # M:데이터 저장 경로
       - /c/dev/docker/mariadb/dataset:/var/lib/mysql  # W:데이터 저장 경로
