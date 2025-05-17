@@ -1,0 +1,71 @@
+>>>>>>>>>>>>>>> index 생성
+url: my_index
+method: put
+body:
+{
+    "mappings": {
+        "properties":{
+            "id":{
+                "type": "long",
+                "index": false
+            },
+            "title":{
+                "type": "text",
+                "analyzer": "my_custom_analyzer"
+            },
+            "content":{
+                "type": "text",
+                "analyzer": "my_custom_analyzer"
+            },
+            "created":{
+                "type": "date",
+                "index": false
+            }
+        }
+    },
+
+    "settings": {
+        "analysis": {
+            "analyzer": {
+                "my_custom_analyzer": {
+                    "type": "custom",
+                    "char_filter": [],
+                    "tokenizer": "my_nori_tokenizer",
+                    "filter": ["lowercase_filter", "synonym_filter"]
+                }
+            },
+            "char_filter":{
+
+            },
+            "tokenizer":{
+                "my_nori_tokenizer":{
+                    "type":"nori_tokenizer",
+                    "decompound_mode": "mixed",
+                    "discard_punctuation": "true",
+                    "user_dictionary": "dict/userdict_ko.txt",
+                    "lenient": "true"
+                }
+            },
+            "filter":{
+                "lowercase_filter":{
+                    "type":"lowercase"
+                },
+                "synonym_filter":{
+                    "type":"synonym",
+                    "synonyms_path": "dict/synonym-set.txt",
+                    "lenient": "true"
+                }
+            }
+        }
+    }
+}
+
+
+>>>>>>>>>>>>>>> analyzer 조회
+url: my_index/_analyze
+method: get
+body:
+{
+    "analyzer": "my_custom_analyzer",
+    "text": "테스트할 텍스트를 여기에 입력하세요. HI"
+}
