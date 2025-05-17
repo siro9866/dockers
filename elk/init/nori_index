@@ -31,7 +31,11 @@ body:
                     "type": "custom",
                     "char_filter": [],
                     "tokenizer": "my_nori_tokenizer",
-                    "filter": ["lowercase_filter", "synonym_filter"]
+                    "filter": [
+                        "my_pos_filter",
+                        "lowercase_filter",
+                        "synonym_filter"
+                    ]
                 }
             },
             "char_filter":{
@@ -47,6 +51,12 @@ body:
                 }
             },
             "filter":{
+                "my_pos_filter":{
+                    "type":"nori_part_of_speech",
+                    "stoptags":[
+                        "J"
+                    ]
+                },
                 "lowercase_filter":{
                     "type":"lowercase"
                 },
