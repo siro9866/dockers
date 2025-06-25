@@ -31,8 +31,8 @@
       networks:
         - network-mongo
       hostname: mongo-express
-#----------------------------------------
-#========================================
-networks:
-    network-mongo:
-      driver: bridge
+  #----------------------------------------
+  #========================================
+  networks:
+      network-mongo:
+        driver: bridge
