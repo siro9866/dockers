@@ -9,7 +9,8 @@
         - MONGO_INITDB_ROOT_USERNAME=dbuser
         - MONGO_INITDB_ROOT_PASSWORD=dbpassword
       volumes:
-        - ./data/db:/data/db
+        #      - /Users/seowon/dev/docker/mongodb/dataset:/data/db  # M:데이터 저장 경로
+        - /c/dev/docker/mongodb/dataset:/data/db  # W:데이터 저장 경로
       networks:
         - network-mongo
       hostname: mongodb
