@@ -3,7 +3,7 @@ services:
   postgres:
     image: timescale/timescaledb:latest-pg16
     container_name: postgres
-    restart: always
+    restart: no
     environment:
       POSTGRES_DB: dbname
       POSTGRES_USER: dbuser
